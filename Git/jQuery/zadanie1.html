@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <script type="text/javascript"src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<body>
+
+
+    <ul>
+        <li>Polska</li>
+        <li>Niemiec</li>
+        <li>Czechy</li>
+    </ul>
+
+    <script>
+        $( "li" ).each(function( index ) {
+        index ++;
+        $(this).prepend( '<b>'+ index+ '</b>' +  " " + $().text() );
+        }); 
+    </script>
+
+<form name="text_space">
+    <input type="text" name="key" placeholder="Type smth" id="someID"></input>
+    <input type="button" name="print" value="Done" />
+</form>
+
+<p>ds</p>
+
+<script>
+    $( "input" ).change(function(){
+    $("p").text( "Zmienionotekst na: " + document.getElementById("someID").value);
+    }); 
+</script>
+</body>
+</html>
