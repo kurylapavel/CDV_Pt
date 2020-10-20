@@ -116,7 +116,7 @@ Route::get('/newform', function(){
     return view ('newform');
 });
 
-Route::view('/userform', 'userform');
+Route::view('/newform', 'newform');
 
 use App\Http\Controllers\FormController;
 Route::post('/FormController', [FormController::class, 'account']);
