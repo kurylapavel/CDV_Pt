@@ -93,3 +93,30 @@ Route::get('/blade', function(){
     return view ('szablon');
 });
 
+
+use App\Http\Controllers\CdvSite;
+Route::get('/site', [CdvSite::class, 'index']);
+Route::get('/site/{CdvSite}', [CdvSite::class, 'index']);
+
+use App\Http\Controllers\PageController;
+Route::get('/drives/{drives}', [PageController::class, 'show']);
+
+Route::get('/userform', function(){
+    return view ('userForm');
+});
+
+Route::view('/userform', 'userform');
+
+use App\Http\Controllers\UserController;
+
+Route::post('/usercontroller', [UserController::class, 'account']);
+
+
+Route::get('/newform', function(){
+    return view ('newform');
+});
+
+Route::view('/userform', 'userform');
+
+use App\Http\Controllers\FormController;
+Route::post('/FormController', [FormController::class, 'account']);
