@@ -120,3 +120,11 @@ Route::view('/newform', 'newform');
 
 use App\Http\Controllers\FormController;
 Route::post('/FormController', [FormController::class, 'account']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
