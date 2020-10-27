@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="usercontroller" method="POST">
+    <form action="FormController" method="POST">
             {{ csrf_field()}}
             <input type="text" name="name" placeholder="Name">
             @error('name')
@@ -19,12 +19,12 @@
                 <span>{{$message}}</span>
             @enderror
             <br><br>
-            {{-- <p><input type="radio" name="gender">Male
-            <input type="radio" name="gender">Female</p>
+            <input type="radio" name="gender" value="Male">Male
+            <input type="radio" name="gender" value="Female">Female
             @error('gender')
                 <span>{{$message}}</span>
             @enderror
-            <br> --}}
+            <br><br>
             <input type="text" name="email" placeholder="email">
             @error('email')
                 <span>{{$message}}</span>
