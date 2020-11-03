@@ -132,3 +132,40 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+use App\Http\Controllers\Data;
+Route::get('/data', [App\Http\Controllers\Data::class, 'list']);
+
+
+Route::get('/json', function(){
+    echo 'isJson';
+})->middleware('isjson');
+
+Route::view('login','login');
+use App\Http\Controllers\login;
+
+Route::post('login',[App\Http\Controllers\login::class, 'index']);
+
+Route::get('profile',function(){
+    if(!session()->has('data')){
+        return redirect('login');
+    }
+    return view ('profile');
+});
+
+Route::get('/logout',function(){
+    session()->forget('data');
+    return redirect('login');
+});
+
+use App\Http\Controllers\kursy;
+Route::get('/kursy',[App\Http\Controllers\kursy::class, 'list']);
+
+
+
+
+
+
+
+
+
