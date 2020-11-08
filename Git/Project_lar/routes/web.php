@@ -161,9 +161,10 @@ Route::get('/logout',function(){
 use App\Http\Controllers\kursy;
 Route::get('/kursy',[App\Http\Controllers\kursy::class, 'list']);
 
+Route::view('kalk','kalk');
 
-
-
+use App\Http\Controllers\Calculate;
+Route::post('/Calculate',[App\Http\Controllers\Calculate::class, 'index']);
 
 
 
