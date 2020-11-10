@@ -29,3 +29,14 @@ Route::view('formularz','formularz');
 
 use App\Http\Controllers\show;
 Route::post('/show',[App\Http\Controllers\show::class, 'list']);
+
+
+Route::view('prof','prof');
+
+
+
+
+
+
+
+

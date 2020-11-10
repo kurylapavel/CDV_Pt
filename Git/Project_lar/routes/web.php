@@ -20,14 +20,15 @@ Route::get('/', function () {
 
 
 
-Route::get('/cdv', function(){
-    //return view ('cdv');
-    //return 'cdv';
-    //return ['name' => 'Anna','surname'=>'kowalska'];
+// Route::get('/cdv', function(){
+//     //return view ('cdv');
+//     //return 'cdv';
+//     //return ['name' => 'Anna','surname'=>'kowalska'];
 
-    return view ('/cdv',['name' => 'Anna','surname'=>'kowalska']);
+//     return view ('/cdv',['name' => 'Anna','surname'=>'kowalska']);
 
-});
+// });
+
 
 
 Route::get('/pages/{x}', function ($x) {
@@ -166,7 +167,26 @@ Route::view('kalk','kalk');
 use App\Http\Controllers\Calculate;
 Route::post('/Calculate',[App\Http\Controllers\Calculate::class, 'index']);
 
+Route::view('prof','prof');
+
+Route::get('prof/{locale}', function($locale){
+
+    App:setLocale($locale);
+    return view ('prof');
+});
 
 
+Route::post('/cdv',[App\Http\Controllers\cdv::class,'shop']);
+Route::view('form','form');
 
+
+Route::get('/send',function(){
+    $details =[
+      'title' => 'CDV - email',
+      'body' => 'Wiadomosc testowa',  
+    ];
+
+    \Mail::to('pkuryla@edu.cdv.pl')->send(new \App\Mail\TestMail($details));
+    echo 'wiadomosc wyslana pomyslnie';
+});
 
