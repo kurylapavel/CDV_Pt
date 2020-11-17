@@ -190,3 +190,11 @@ Route::get('/send',function(){
     echo 'wiadomosc wyslana pomyslnie';
 });
 
+
+
+
+
+
+
+
+
