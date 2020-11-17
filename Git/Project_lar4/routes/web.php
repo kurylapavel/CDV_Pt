@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/db',[App\Http\Controllers\cdv::class,'index']);
+
+Route::get('/user',[App\Http\Controllers\User::class,'index']);
