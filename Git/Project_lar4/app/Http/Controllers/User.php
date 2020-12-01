@@ -70,8 +70,26 @@ class User extends Controller
         //     print_r($data);
         // echo '</pre>';
 
+        // $data = DB::table('user')
+        // ->select('user.name','user.surname','city.city')
+        // ->join('city','city_id','city.id')
+        // ->join('state','state_id','state.id')
+        // ->where('city.city','Bolesławiec')
+        // ->get();
 
-        
+        // echo '<pre>';
+        //     print_r($data);
+        // echo '</pre>';
+
+
+        $data = DB::table('user')
+        ->select('user.name','user.surname','city.city')
+        ->leftjoin('city','city_id','city.id')
+        ->get();
+
+        echo '<pre>';
+            print_r($data);
+        echo '</pre>';
 
     }
 }

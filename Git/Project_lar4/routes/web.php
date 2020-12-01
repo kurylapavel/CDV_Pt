@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/db',[App\Http\Controllers\cdv::class,'index']);
 
 Route::get('/user',[App\Http\Controllers\User::class,'index']);
+
+Route::get('/showdb',[App\Http\Controllers\cdv1::class,'show']);
+
+Route::get('/zddb',[App\Http\Controllers\zddb::class,'show']);
