@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 
 class preparation extends Controller
 {
+    //asd
     function preparation($cardNumber,Request $req){
 
         //$Db = DB::select('select balance from usercards where cardNumber = ?', [$cardNumber]);
