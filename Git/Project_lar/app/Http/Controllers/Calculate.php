@@ -32,7 +32,7 @@ class Calculate extends Controller
 
         return view ('kalk',['text'=>$text]);
 
-
+        
 
     }
 }
